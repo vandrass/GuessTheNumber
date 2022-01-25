@@ -8,7 +8,7 @@ namespace GuessTheNumber.UI
     {
         public static void Main()
         {
-            char answer;
+            bool endOfWhile;
             var numberForGuessing = new NumberForGuessing();
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddScoped<ICheckingGuessNumber, ChekingGuessNumber>();
@@ -24,21 +24,24 @@ namespace GuessTheNumber.UI
                 {
                     do
                     {
-                        answer = default;
+                        char answer;
+                        endOfWhile = false;
                         Console.WriteLine("Do you want to continue? y/n");
                         answer = Console.ReadLine()[0];
 
                         if (answer == 'y')
                         {
                             numberForGuessing = new NumberForGuessing();
+                            endOfWhile = true;
                         }
                         else if (answer == 'n')
                         {
                             numberForGuessing = null;
+                            endOfWhile = true;
                         }
 
                     }
-                    while (answer == 'y' || answer == 'n');
+                    while (!endOfWhile);
                 }
             }
             while (numberForGuessing != null);
