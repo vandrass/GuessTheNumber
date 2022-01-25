@@ -11,6 +11,8 @@ namespace GuessTheNumber.Application
 
         public int Number { get; private set; }
 
+        public bool IsRightNumber { get; set; }
+
         public void SetRandomNumber()
         {
             var random = new Random();
