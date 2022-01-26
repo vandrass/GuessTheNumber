@@ -2,8 +2,15 @@
 
 namespace GuessTheNumber.Application
 {
+    /// <summary>
+    /// Class for cheking of user number with computer guess nummber.
+    /// </summary>
     public class ChekingGuessNumber : ICheckingGuessNumber
     {
+        /// <summary>
+        /// Check input number with computer guess number and display messages by conditions.
+        /// </summary>
+        /// <param name="numberForGuessing">Number for checking.</param>
         public void CheckTheGuessNumber(NumberForGuessing numberForGuessing)
         {
             int userNumber;

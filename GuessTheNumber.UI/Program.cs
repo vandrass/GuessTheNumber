@@ -4,8 +4,15 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace GuessTheNumber.UI
 {
+    /// <summary>
+    /// Start program. UI interface.
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// UI. The program create a number and the user has to guess it.
+        /// if the user guessed the number, the program suggests continuing or exiting.
+        /// </summary>
         public static void Main()
         {
             bool endOfWhile;
