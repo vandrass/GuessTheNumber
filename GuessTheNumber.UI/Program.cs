@@ -46,7 +46,6 @@ namespace GuessTheNumber.UI
                             numberForGuessing = null;
                             endOfWhile = true;
                         }
-
                     }
                     while (!endOfWhile);
                 }
