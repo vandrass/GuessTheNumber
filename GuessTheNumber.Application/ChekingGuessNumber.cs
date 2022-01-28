@@ -43,6 +43,7 @@ namespace GuessTheNumber.Application
         /// </summary>
         /// <param name="numberForGuessing">Number for guessing.</param>
         /// <param name="userInput">Input value.</param>
+        /// <returns>string with message for tests.</returns>
         public string ToTestsCheckTheGuessNumber(NumberForGuessing numberForGuessing, string userInput)
         {
             int userNumber;

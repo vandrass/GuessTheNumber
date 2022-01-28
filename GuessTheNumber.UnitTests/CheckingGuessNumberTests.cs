@@ -4,6 +4,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GuessTheNumber.UnitTests
 {
+    /// <summary>
+    /// Class for CheckingGuessNumber testing.
+    /// </summary>
     [TestClass]
     public class CheckingGuessNumberTests
     {
@@ -11,6 +14,9 @@ namespace GuessTheNumber.UnitTests
         private ServiceProvider _provider;
         private ICheckingGuessNumber _service;
 
+        /// <summary>
+        /// Service collection for working with CheckingGuessNumber class.
+        /// </summary>
         [TestInitialize]
         public void TestInitialize()
         {
@@ -19,6 +25,9 @@ namespace GuessTheNumber.UnitTests
             _service = _provider.GetRequiredService<ICheckingGuessNumber>();
         }
 
+        /// <summary>
+        /// If computer number and user input number are equal, method return string "equal".
+        /// </summary>
         [TestMethod]
         public void RandomNumber_NumberEqualToRandomNumber_ReturnEqualString()
         {
@@ -34,6 +43,9 @@ namespace GuessTheNumber.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// If computer number and user input number are equal, propertie IsRightNumber must be 'true'.
+        /// </summary>
         [TestMethod]
         public void RandomNumber_NumberEqualToRandomNumber_TrueInNumberForGuessing()
         {
@@ -50,6 +62,9 @@ namespace GuessTheNumber.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// If user number lower than computer number, method return string "low".
+        /// </summary>
         [TestMethod]
         public void RandomNumber_NumberLowToRandomNumber_ReturnLowString()
         {
@@ -65,6 +80,9 @@ namespace GuessTheNumber.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// If user number lower than computer number, propertie IsRightNumber must be 'false'.
+        /// </summary>
         [TestMethod]
         public void RandomNumber_NumberLowToRandomNumber_FalseInNumberForGuessing()
         {
@@ -81,6 +99,9 @@ namespace GuessTheNumber.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// If user number higher than computer number, method return string "hight".
+        /// </summary>
         [TestMethod]
         public void RandomNumber_NumberHigherToRandomNumber_ReturnHightString()
         {
@@ -96,6 +117,9 @@ namespace GuessTheNumber.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// If user number higher than computer number, propertie IsRightNumber must be 'false'.
+        /// </summary>
         [TestMethod]
         public void RandomNumber_NumberHigherToRandomNumber_FalseInNumberForGuessing()
         {
@@ -112,6 +136,9 @@ namespace GuessTheNumber.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// If user input wasn`t number, method return string "not numbers".
+        /// </summary>
         [TestMethod]
         public void RandomNumber_NonNumericValue_ReturnNotNumbersString()
         {
@@ -127,6 +154,9 @@ namespace GuessTheNumber.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// If user input wasn`t number, propertie IsRightNumber must be 'false'.
+        /// </summary>
         [TestMethod]
         public void RandomNumber_NonNumericValue_FalseInNumberForGuessing()
         {
