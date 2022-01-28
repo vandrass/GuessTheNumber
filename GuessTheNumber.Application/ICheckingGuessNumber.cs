@@ -11,6 +11,6 @@
         /// <param name="number">Number for checking.</param>
         public void CheckTheGuessNumber(NumberForGuessing number);
 
-        public void ToTestsCheckTheGuessNumber(NumberForGuessing numberForGuessing, string userInput);
+        public string ToTestsCheckTheGuessNumber(NumberForGuessing numberForGuessing, string userInput);
     }
 }

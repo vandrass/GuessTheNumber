@@ -43,7 +43,7 @@ namespace GuessTheNumber.Application
         /// </summary>
         /// <param name="numberForGuessing">Number for guessing.</param>
         /// <param name="userInput">Input value.</param>
-        public void ToTestsCheckTheGuessNumber(NumberForGuessing numberForGuessing, string userInput)
+        public string ToTestsCheckTheGuessNumber(NumberForGuessing numberForGuessing, string userInput)
         {
             int userNumber;
             string temp = userInput;
@@ -54,20 +54,21 @@ namespace GuessTheNumber.Application
                 {
                     Console.WriteLine("Congratulation! You guessed the number!");
                     numberForGuessing.IsRightNumber = true;
+                    return "equal";
                 }
                 else if (userNumber <= numberForGuessing.Number)
                 {
                     Console.WriteLine("Your number is lower than Computer did guess");
+                    return "low";
                 }
                 else
                 {
                     Console.WriteLine("Your number is higher than Computer did guess");
+                    return "hight";
                 }
             }
-            else
-            {
-                Console.WriteLine("Numbers only!");
-            }
+
+            return "not numbers";
         }
     }
 }
