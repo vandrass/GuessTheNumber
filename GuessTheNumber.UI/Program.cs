@@ -25,10 +25,13 @@ namespace GuessTheNumber.UI
             do
             {
                 Console.WriteLine("What number from 0 to 100 did the computer guess?");
-                service.CheckTheGuessNumber(numberForGuessing);
+                var userInput = Console.ReadLine();
 
-                if (numberForGuessing.IsRightNumber)
+                service.CheckTheGuessNumber(numberForGuessing, userInput);
+
+                if (numberForGuessing.IsEqual)
                 {
+                    Console.WriteLine("Congratulation! You guessed the number!");
                     do
                     {
                         char answer;
@@ -49,8 +52,28 @@ namespace GuessTheNumber.UI
                     }
                     while (!endOfWhile);
                 }
+                else
+                {
+                    OutputMessages(numberForGuessing);
+                }
             }
             while (numberForGuessing != null);
+        }
+
+        private static void OutputMessages(NumberForGuessing numberForGuessing)
+        {
+            if (numberForGuessing.IsLow)
+            {
+                Console.WriteLine("Your number is lower than Computer did guess");
+            }
+            else if (numberForGuessing.IsHight)
+            {
+                Console.WriteLine("Your number is higher than Computer did guess");
+            }
+            else
+            {
+                Console.WriteLine("Intager Numbers only!");
+            }
         }
     }
 }

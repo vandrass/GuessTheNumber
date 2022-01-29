@@ -56,7 +56,7 @@ namespace GuessTheNumber.UnitTests
 
             // Act
             _service.ToTestsCheckTheGuessNumber(numberForGuessing, inputNumber);
-            var actual = numberForGuessing.IsRightNumber;
+            var actual = numberForGuessing.IsEqual;
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -93,7 +93,7 @@ namespace GuessTheNumber.UnitTests
 
             // Act
             _service.ToTestsCheckTheGuessNumber(numberForGuessing, inputNumber);
-            var actual = numberForGuessing.IsRightNumber;
+            var actual = numberForGuessing.IsEqual;
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -130,7 +130,7 @@ namespace GuessTheNumber.UnitTests
 
             // Act
             _service.ToTestsCheckTheGuessNumber(numberForGuessing, inputNumber);
-            var actual = numberForGuessing.IsRightNumber;
+            var actual = numberForGuessing.IsEqual;
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -167,7 +167,7 @@ namespace GuessTheNumber.UnitTests
 
             // Act
             _service.ToTestsCheckTheGuessNumber(numberForGuessing, inputNumber);
-            var actual = numberForGuessing.IsRightNumber;
+            var actual = numberForGuessing.IsEqual;
 
             // Assert
             Assert.AreEqual(expected, actual);

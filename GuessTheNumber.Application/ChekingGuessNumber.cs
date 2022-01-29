@@ -8,68 +8,38 @@ namespace GuessTheNumber.Application
     public class ChekingGuessNumber : ICheckingGuessNumber
     {
         /// <summary>
-        /// Check input number with computer guess number and display messages by conditions.
-        /// </summary>
-        /// <param name="numberForGuessing">Number for guessing.</param>
-        public void CheckTheGuessNumber(NumberForGuessing numberForGuessing)
-        {
-            int userNumber;
-            string temp = Console.ReadLine();
-
-            if (int.TryParse(temp, out userNumber))
-            {
-                if (userNumber == numberForGuessing.Number)
-                {
-                    Console.WriteLine("Congratulation! You guessed the number!");
-                    numberForGuessing.IsRightNumber = true;
-                }
-                else if (userNumber <= numberForGuessing.Number)
-                {
-                    Console.WriteLine("Your number is lower than Computer did guess");
-                }
-                else
-                {
-                    Console.WriteLine("Your number is higher than Computer did guess");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Numbers only!");
-            }
-        }
-
-        /// <summary>
         /// Version for tests - Check input number with computer guess number and display messages by conditions.
         /// </summary>
         /// <param name="numberForGuessing">Number for guessing.</param>
         /// <param name="userInput">Input value.</param>
-        /// <returns>string with message for tests.</returns>
-        public string ToTestsCheckTheGuessNumber(NumberForGuessing numberForGuessing, string userInput)
+        public void CheckTheGuessNumber(NumberForGuessing numberForGuessing, string userInput)
         {
             int userNumber;
             string temp = userInput;
+            AllToFalse(numberForGuessing);
 
             if (int.TryParse(temp, out userNumber))
             {
                 if (userNumber == numberForGuessing.Number)
                 {
-                    Console.WriteLine("Congratulation! You guessed the number!");
-                    numberForGuessing.IsRightNumber = true;
-                    return "equal";
+                    numberForGuessing.IsEqual = true;
                 }
-                else if (userNumber <= numberForGuessing.Number)
+
+                if (userNumber <= numberForGuessing.Number)
                 {
-                    Console.WriteLine("Your number is lower than Computer did guess");
-                    return "low";
+                   numberForGuessing.IsLow = true;
                 }
-                else
-                {
-                    Console.WriteLine("Your number is higher than Computer did guess");
-                    return "hight";
-                }
+
+                numberForGuessing.IsHight = true;
             }
 
-            return "not numbers";
+            numberForGuessing.IsNotNumber = true;
+        }
+
+        private void AllToFalse(NumberForGuessing numberForGuessing)
+        {
+            numberForGuessing.IsEqual = numberForGuessing.IsLow =
+                numberForGuessing.IsHight = numberForGuessing.IsNotNumber = false;
         }
     }
 }
