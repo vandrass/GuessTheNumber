@@ -216,10 +216,10 @@ namespace GuessTheNumber.UnitTests
         }
 
         /// <summary>
-        /// If user number higher than computer number, Islow will be false.
+        /// If user number higher than computer number, IsLow will be false.
         /// </summary>
         [TestMethod]
-        public void RandomNumber_NumberHigherToRandomNumber_IslowFalse()
+        public void RandomNumber_NumberHigherToRandomNumber_IsLowFalse()
         {
             // Arrange
             var numberForGuessing = new NumberForGuessing();
@@ -228,7 +228,7 @@ namespace GuessTheNumber.UnitTests
 
             // Act
             _service.CheckTheGuessNumber(numberForGuessing, inputNumber);
-            var actual = numberForGuessing.Islow;
+            var actual = numberForGuessing.IsLow;
 
             // Assert
             Assert.AreEqual(expected, actual);
