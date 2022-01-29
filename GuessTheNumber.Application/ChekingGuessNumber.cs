@@ -24,16 +24,19 @@ namespace GuessTheNumber.Application
                 {
                     numberForGuessing.IsEqual = true;
                 }
-
-                if (userNumber <= numberForGuessing.Number)
+                else if (userNumber <= numberForGuessing.Number)
                 {
                    numberForGuessing.IsLow = true;
                 }
-
-                numberForGuessing.IsHight = true;
+                else
+                {
+                    numberForGuessing.IsHight = true;
+                }
             }
-
-            numberForGuessing.IsNotNumber = true;
+            else
+            {
+                numberForGuessing.IsNotNumber = true;
+            }
         }
 
         private void AllToFalse(NumberForGuessing numberForGuessing)
