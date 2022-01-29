@@ -72,7 +72,7 @@ namespace GuessTheNumber.UI
             }
             else
             {
-                Console.WriteLine("Intager Numbers only!");
+                Console.WriteLine("Integer Numbers only!");
             }
         }
     }
