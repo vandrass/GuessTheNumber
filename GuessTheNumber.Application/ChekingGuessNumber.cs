@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GuessTheNumber.Application
+﻿namespace GuessTheNumber.Application
 {
     /// <summary>
     /// Class for cheking of user number with computer guess nummber.
@@ -16,33 +14,23 @@ namespace GuessTheNumber.Application
         {
             int userNumber;
             string temp = userInput;
-            AllToFalse(numberForGuessing);
+            numberForGuessing.NumberStatus = GuessingNumberStatus.None;
 
             if (int.TryParse(temp, out userNumber))
             {
                 if (userNumber == numberForGuessing.Number)
                 {
-                    numberForGuessing.IsEqual = true;
+                    numberForGuessing.NumberStatus = GuessingNumberStatus.Equal;
                 }
                 else if (userNumber <= numberForGuessing.Number)
                 {
-                   numberForGuessing.IsLow = true;
+                    numberForGuessing.NumberStatus = GuessingNumberStatus.Low;
                 }
                 else
                 {
-                    numberForGuessing.IsHight = true;
+                    numberForGuessing.NumberStatus = GuessingNumberStatus.High;
                 }
             }
-            else
-            {
-                numberForGuessing.IsNotNumber = true;
-            }
-        }
-
-        private void AllToFalse(NumberForGuessing numberForGuessing)
-        {
-            numberForGuessing.IsEqual = numberForGuessing.IsLow =
-                numberForGuessing.IsHight = numberForGuessing.IsNotNumber = false;
         }
     }
 }

@@ -34,11 +34,11 @@ namespace GuessTheNumber.UnitTests
             // Arrange
             var numberForGuessing = new NumberForGuessing();
             var inputNumber = numberForGuessing.Number.ToString();
-            var expected = true;
+            var expected = GuessingNumberStatus.Equal;
 
             // Act
             _service.CheckTheGuessNumber(numberForGuessing, inputNumber);
-            var actual = numberForGuessing.IsEqual;
+            var actual = numberForGuessing.NumberStatus;
 
             // Assert
             Assert.AreEqual(expected, actual);

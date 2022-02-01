@@ -29,7 +29,7 @@ namespace GuessTheNumber.UI
 
                 service.CheckTheGuessNumber(numberForGuessing, userInput);
 
-                if (numberForGuessing.IsEqual)
+                if (numberForGuessing.NumberStatus == GuessingNumberStatus.Equal)
                 {
                     Console.WriteLine("Congratulation! You guessed the number!");
                     do
@@ -62,11 +62,11 @@ namespace GuessTheNumber.UI
 
         private static void OutputMessages(NumberForGuessing numberForGuessing)
         {
-            if (numberForGuessing.IsLow)
+            if (numberForGuessing.NumberStatus == GuessingNumberStatus.Low)
             {
                 Console.WriteLine("Your number is lower than Computer did guess");
             }
-            else if (numberForGuessing.IsHight)
+            else if (numberForGuessing.NumberStatus == GuessingNumberStatus.High)
             {
                 Console.WriteLine("Your number is higher than Computer did guess");
             }

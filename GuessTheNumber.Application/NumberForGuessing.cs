@@ -7,6 +7,8 @@ namespace GuessTheNumber.Application
     /// </summary>
     public class NumberForGuessing
     {
+        // private GuessingNumberStatus numberStatus = GuessingNumberStatus.None;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="NumberForGuessing"/> class.
         /// </summary>
@@ -14,6 +16,11 @@ namespace GuessTheNumber.Application
         {
             SetRandomNumber();
         }
+
+        /// <summary>
+        /// Gets or Sets guessing number sstatus.
+        /// </summary>
+        public GuessingNumberStatus NumberStatus { get; set; }
 
         /// <summary>
         /// Gets number for guessing.
