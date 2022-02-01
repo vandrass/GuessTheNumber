@@ -27,26 +27,6 @@ namespace GuessTheNumber.Application
         /// </summary>
         public int Number { get; private set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether true - if number guessed.
-        /// </summary>
-        public bool IsEqual { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether true - if number higher than guessed.
-        /// </summary>
-        public bool IsHight { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether true - if number lower than guessed.
-        /// </summary>
-        public bool IsLow { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether true - if is not number.
-        /// </summary>
-        public bool IsNotNumber { get; set; }
-
         private void SetRandomNumber()
         {
             var random = new Random();
